@@ -1,0 +1,14 @@
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+
+deb http://archive.ubuntu.com/ubuntu/ xenial main universe
+
+deb http://archive.ubuntu.com/ubuntu/ xenial-updates main universe
+
+deb http://archive.ubuntu.com/ubuntu/ xenial-security main universe
+
+deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main
+
+deb http://ppa.launchpad.net/maarten-fonville/protobuf/ubuntu xenial main
+
+deb http://ppa.launchpad.net/longsleep/golang-backports/ubuntu xenial main

@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 ENV DEBIAN_FRONTEND noninteractive
-COPY docker/conf/sources.list /etc/apt/sources.list
+COPY sources.list /etc/apt/sources.list
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DC6A13A3 && \
@@ -37,6 +37,6 @@ RUN git clone --recursive -b v1.4.x https://github.com/grpc/grpc /root/grpc && \
 
 RUN /usr/lib/go-1.8/bin/go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 
-COPY docker/conf/grpc.php.ini /etc/php/7.0/cli/conf.d/grpc.ini
+COPY grpc.php.ini /etc/php/7.0/cli/conf.d/grpc.ini
 
 CMD GOPATH=/root/go/ GOROOT=/usr/lib/go-1.8/ PATH=$GOPATH/bin:$GOROOT/bin:$PATH:/opt/protoc/bin protoc -Iproto -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --php_out=src --grpc_out=src proto/*
